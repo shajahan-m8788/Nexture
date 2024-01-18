@@ -14,6 +14,11 @@ $color-grey-dark-2: #6d5d4b;
 $font-primary: "Nunito", sans-serif;
 $font-display: "Josefin Sans", sans-serif;
 
+$bg-largest: 75em;
+$bg-medium: 62.5em;
+$bg-medium-2: 50em;
+$bg-small: 37.5em;
+
 *,
 *::before,
 *::after {
@@ -25,6 +30,9 @@ $font-display: "Josefin Sans", sans-serif;
 html {
   font-size: 62.5%;
   box-sizing: border-box;
+  @media only screen and (max-width: $bg-largest) {
+    font-size: 50%;
+  }
 }
 body {
   font-family: $font-primary;
@@ -39,4 +47,19 @@ body {
     [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end])
     [center-end] minmax(6rem, 1fr)
     [full-end];
+
+  @media only screen and (max-width: $bg-medium) {
+    grid-template-rows: 6rem 80vh min-content 40vw repeat(3, min-content);
+    grid-template-columns:
+      [ full-start] minmax(6rem, 1fr)
+      [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end])
+      [center-end] minmax(6rem, 1fr)
+      [full-end];
+  }
+  @media only screen and (max-width: $bg-medium-2) {
+    grid-template-rows: 6rem calc(100vh - 6rem) min-content min-content repeat(
+        3,
+        min-content
+      );
+  }
 }

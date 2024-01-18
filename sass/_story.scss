@@ -10,6 +10,9 @@
         rgba($color-primary, 0.5)
       ),
       url(../img/back.jpg);
+    @media only screen and (max-width: $bg-medium-2) {
+      grid-column: 1/-1;
+    }
   }
   &__img--1 {
     width: 100%;
@@ -21,6 +24,10 @@
     grid-row: 4/6;
     grid-column: 4/7;
     z-index: 10;
+    @media only screen and (max-width: $bg-medium-2) {
+      width: 100%;
+      grid-column: 4/-1;
+    }
   }
   &__img--3 {
     width: 100%;
@@ -32,6 +39,9 @@
     display: grid;
     align-content: center;
     justify-items: flex-start;
+    @media only screen and (max-width: $bg-medium-2) {
+      grid-column: 1/-1;
+    }
   }
   &__text {
     font-size: 1.5rem;
